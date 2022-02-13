@@ -2,16 +2,29 @@ Vue.createApp({
     data(){
         return {
             goals: [],
-            enteredValue: ''
+            enteredValue: '',
+            vueLink: 'https://www.udemy.com/course/vuejs-2-the-complete-guide',
+            firstMotivation: "<strong>C'mon c'mon!</strong>",
+            secondMotivation: "You can do it!"
+
         };
     },
     methods: {
         addGoal(){
             this.goals.push(this.enteredValue);
             this.enteredValue ='';
+        },
+        motivationTxt(){
+            const randomNumber = Math.random();
+            if (randomNumber < 0.5){
+                return this.firstMotivation;
+            }
+            else {
+                return this.secondMotivation;
+            }                
         }
     }
-}).mount('#app');
+}).mount('#user-goal');
 
 
 

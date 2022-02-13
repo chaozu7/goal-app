@@ -3,22 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A First App</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>A Goal App</title>
+    <link rel="stylesheet" href="style/styles.css" >
   </head>
   <body>
-    <div id="app">
+    <div id="user-goal">
       <div>
         <label for="goal">Goal</label>
         <input type="text" id="goal" v-model="enteredValue" />
         <button v-on:click="addGoal">Add Goal</button>
       </div>
       <ul>
-        <li v-for="goal in goals">{{ goal }}</li>
-      
+        <!--here interpolating data-->
+        <!-- syntax with dubble braces are only awailable between html tags, not atributtes-->
+        <li v-for="goal in goals">{{ goal }}</li>     
       </ul>
+      <p v-html="motivationTxt()"></p>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="app.js"></script>
   </body>
+  <footer<p>Project based on code from 
+    <a v-bind:href="vueLink">
+      Udemy</a></p></footer>
 </html>
